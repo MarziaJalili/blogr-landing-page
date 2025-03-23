@@ -1,69 +1,82 @@
 @import "tailwindcss";
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@theme {
+  /* fonts */
+  --font-overpass: "Overpass", sans-serif;
+  --font-ubuntu: "Ubuntu", sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* colors */
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* ### Primary */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  --color-Light-red-CTA-text: hsl(356, 100%, 66%);
+  --color-Very-light-red-CTA-hover-background: hsl(355, 100%, 74%);
+  --color-Very-dark-blue-headings: hsl(208, 49%, 24%);
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  /* ### Neutral */
+
+  --color-White-text: hsl(0, 0%, 100%);
+  --color-Grayish-blue-footer-text: hsl(240, 2%, 79%);
+  --color-Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+  --color-Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+
+  /* ### Gradient */
+
+  /* Background gradient - Intro/CTA mobile nav: */
+
+  --color-Very-light-red: hsl(13, 100%, 72%);
+  --color-Light-red: hsl(353, 100%, 62%);
+
+  /* Background gradient - body: */
+
+  --color-Very-dark-gray-blue: hsl(237, 17%, 21%);
+  --color-Very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.cta {
+  background-image: url("../public/bg-pattern-intro-mobile.svg"),
+    linear-gradient(
+      to bottom,
+      var(--color-Very-light-red) 30%,
+      var(--color-Light-red)
+    );
+  @media (min-width: 900px) {
+    background-image: url("../public/bg-pattern-intro-desktop.svg"),
+      linear-gradient(
+        to right,
+        var(--color-Very-light-red) 30%,
+        var(--color-Light-red)
+      );
   }
-  a:hover {
-    color: #747bff;
+}
+
+@utility btn {
+  @apply border-1 border-White-text pt-2.5 pb-2 px-5 rounded-full cursor-pointer font-bold;
+}
+
+/* hamburger menu */
+.hamburger {
+  transition: all 0.25s;
+  span {
+    transition: all 0.5s;
   }
-  button {
-    background-color: #f9f9f9;
+}
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+.hamburger.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+
+  .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+
+  .hamburger-middle {
+    display: none;
+  }
+
+  .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
   }
 }
