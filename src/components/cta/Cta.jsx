@@ -1,24 +1,28 @@
+import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
 
 import { useState } from "react";
 
 const Cta = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
+
   // toggle the menu button
   const handleClick = () => {
     const btn = document.getElementById("menu-btn");
-    btn.classList.toggle("open");
 
     // toggle and animate the nav
     if (isMenuShown) {
       document.querySelector("#menu").classList.add("fade-nav");
       setTimeout(() => {
         setIsMenuShown(false);
+        btn.classList.remove("open");
       }, 1000);
     } else {
       setIsMenuShown(true);
+      btn.classList.add("open");
     }
   };
+
   return (
     <section
       id="cta"
@@ -26,7 +30,7 @@ const Cta = () => {
        "
     >
       {/* header */}
-      <div className="container mx-auto flex items-center px-5 mt-10 space-x-12 max-lg:justify-between lg:px-20">
+      <div className="relative container flex items-center justify-between mx-auto px-5 mt-10 space-x-12  xl:px-20">
         <div className="max-lg:flex max-lg:container max-lg:mx-auto max-lg:items-center max-lg:justify-between">
           <img src="./logo.svg" className="max-lg:max-w-16" alt="logo" />
 
@@ -34,7 +38,7 @@ const Cta = () => {
           <button
             aria-label="Toggles the Navigation Menu"
             id="menu-btn"
-            className="hamburger absolute right-6 transition-all w-[24px] h-[24px] cursor-pointer lg:hidden focus:outline-none"
+            className="hamburger absolute right-6 transition-all w-[24px] h-[24px] cursor-pointer md:hidden focus:outline-none"
             onClick={handleClick}
           >
             <span className="hamburger-top absolute top-0 left-0 w-[24px] h-[2px]   bg-White-text"></span>
@@ -45,14 +49,17 @@ const Cta = () => {
           </button>
         </div>
 
-        <Nav />
+        <nav className="max-lg:hidden">
+          <Nav />
+        </nav>
 
-        <div className="hidden lg:flex space-x-4 ml-auto">
+        <div className="hidden md:flex space-x-4 ml-auto">
           <button className="btn border-none font-medium">Login</button>
-          <button className="btn bg-White-text text-Light-red px-8">
+          <button className="btn bg-White-text text-Light-red px-8 min-w-[130px] transition-colors duration-600 hover:bg-Very-light-red-CTA-hover-background hover:border-Very-light-red-CTA-hover-background hover:text-White-text">
             Sign Up
           </button>
         </div>
+        {isMenuShown ? <MobileMenu /> : null}
       </div>
 
       {/* heading content */}
@@ -66,10 +73,16 @@ const Cta = () => {
 
         {/* buttons */}
         <div className="flex space-x-5 mt-6">
-          <a href="#" className="btn text-Light-red bg-White-text">
+          <a
+            href="#"
+            className="btn text-Light-red bg-White-text transition-colors duration-600 hover:bg-Very-light-red-CTA-hover-background hover:border-Very-light-red-CTA-hover-background hover:text-White-text"
+          >
             Start for Free
           </a>
-          <a href="#" className="btn">
+          <a
+            href="#"
+            className="btn  transition-colors duration-600 hover:bg-White-text hover:text-Light-red"
+          >
             Learn More
           </a>
         </div>

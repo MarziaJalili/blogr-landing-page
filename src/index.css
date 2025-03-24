@@ -19,6 +19,7 @@
   --color-Grayish-blue-footer-text: hsl(240, 2%, 79%);
   --color-Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
   --color-Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+  --color-gray-menu: rgb(240, 242, 243);
 
   /* ### Gradient */
 
@@ -50,6 +51,9 @@
   }
 }
 
+@utility btn-gradient {
+  @apply bg-linear-to-r from-Very-light-red to-Light-red;
+}
 @utility btn {
   @apply border-1 border-White-text pt-2.5 pb-2 px-5 rounded-full cursor-pointer font-bold;
 }
@@ -78,5 +82,29 @@
 
   .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+}
+
+/* mobile nav animation */
+#menu {
+  animation: show-nav 1s ease 1 forwards;
+  &.fade-nav {
+    animation: fade-nav 1s ease 1 forwards;
+  }
+}
+
+@keyframes show-nav {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade-nav {
+  to {
+    transform: translateX(105%);
   }
 }
