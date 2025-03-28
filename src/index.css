@@ -51,6 +51,30 @@
   }
 }
 
+/* h1 weavy effect */
+h1 {
+  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+h1 span {
+  animation: wave 1s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    -webkit-box-reflect: none; /* Remove reflection */
+  }
+}
+
 @utility btn-gradient {
   @apply bg-linear-to-r from-Very-light-red to-Light-red;
 }
@@ -106,5 +130,44 @@
 @keyframes fade-nav {
   to {
     transform: translateX(105%);
+  }
+}
+
+/* connect animation */
+.connect {
+  opacity: 0;
+  transition: 2s;
+  transform: translateY(-20%);
+  animation: connect 1s ease 1 forwards;
+}
+
+@keyframes connect {
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* waves */
+.image:hover .waves {
+  display: flex;
+}
+.waves span {
+  animation: animate-wave 5s linear infinite;
+  animation-delay: calc(0.5s * var(--f));
+}
+
+@keyframes animate-wave {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    height: calc(150% + 75px);
+    opacity: 0;
   }
 }

@@ -39,7 +39,7 @@ const Nav = () => {
         </a>
       </li>
       <li
-        className={`connect relative max-lg:flex max-lg:flex-col max-lg:w-full max-lg:items-center max-md:space-y-5`}
+        className={`relative max-lg:flex max-lg:flex-col max-lg:w-full max-lg:items-center max-md:space-y-5`}
       >
         <a
           className={`flex md:w-full space-x-2 cursor-pointer ${
@@ -65,7 +65,7 @@ const Nav = () => {
           </button>
         </a>
         {isMenuShown ? (
-          <ul className="bg-White-text items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl transition-all duration-500 max-lg:bg-gray-menu max-lg:w-[100%]">
+          <ul className="connect bg-White-text items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]">
             <li className="hover:text-Very-dark-black-blue-footer-background transition-colors">
               Contanct
             </li>

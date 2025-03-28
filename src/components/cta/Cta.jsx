@@ -1,15 +1,26 @@
 import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Cta = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
+  const heading = "A modern publishing platform".split("");
+  const headingSpans = heading.map((span, index) => {
+    const nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    return (
+      <span
+        style={{ "--i": index + 1, "--j": nums[index] }}
+        className={`transform inline-block ${span === " " ? "w-[8px]" : ""}`}
+      >
+        {span}
+      </span>
+    );
+  });
 
   // toggle the menu button
   const handleClick = () => {
     const btn = document.getElementById("menu-btn");
-
     // toggle and animate the nav
     if (isMenuShown) {
       document.querySelector("#menu").classList.add("fade-nav");
@@ -22,6 +33,24 @@ const Cta = () => {
       btn.classList.add("open");
     }
   };
+
+  useEffect(() => {
+    const handleWindowClick = (event) => {
+      const isMenuClicked =
+        event.target.id === "menu" || event.target.closest("#menu");
+
+      if (!isMenuClicked) {
+        console.log("Window clicked; not on menu.");
+      }
+    };
+
+    window.addEventListener("click", handleWindowClick);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("click", handleWindowClick);
+    };
+  }, []);
 
   return (
     <section
@@ -64,8 +93,8 @@ const Cta = () => {
 
       {/* heading content */}
       <div className="container mx-auto items-center flex flex-col px-8 pb-30 pt-10 space-y-3 text-White-text lg:my-4">
-        <h1 className="text-3xl font-medium text-center px-5 md:text-4xl lg:text-5xl">
-          A modern publishing platform
+        <h1 className="relative text-3xl font-medium text-center px-5 md:text-4xl lg:text-5xl">
+          {headingSpans}
         </h1>
         <p className="text-center px-5 lg:text-lg">
           Grow your audience and build your online brand
