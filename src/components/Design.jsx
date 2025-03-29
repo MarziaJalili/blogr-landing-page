@@ -1,5 +1,4 @@
 import React from "react";
-import Illustration from "./Illustration";
 
 const Design = () => {
   const waveArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -12,6 +11,7 @@ const Design = () => {
       ></span>
     );
   });
+
   return (
     <section className="design relative flex flex-col items-center mt-20 space-y-12">
       <h2 className="text-3xl font-bold text-Very-dark-blue-headings lg:text-5xl">

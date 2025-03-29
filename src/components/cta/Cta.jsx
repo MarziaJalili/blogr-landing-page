@@ -11,7 +11,7 @@ const Cta = () => {
     return (
       <span
         style={{ "--i": index + 1, "--j": nums[index] }}
-        className={`transform inline-block ${span === " " ? "w-[8px]" : ""}`}
+        className={`transform inline-block ${span === " " ? "w-[9px]" : ""}`}
       >
         {span}
       </span>
@@ -93,7 +93,7 @@ const Cta = () => {
 
       {/* heading content */}
       <div className="container mx-auto items-center flex flex-col px-8 pb-30 pt-10 space-y-3 text-White-text lg:my-4">
-        <h1 className="relative text-3xl font-medium text-center px-5 md:text-4xl lg:text-5xl">
+        <h1 className="relative text-4xl font-medium text-center px-6 md:text-4xl lg:text-5xl">
           {headingSpans}
         </h1>
         <p className="text-center px-5 lg:text-lg">
