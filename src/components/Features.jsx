@@ -14,7 +14,7 @@ const Design = () => {
 
   return (
     <section className="design relative flex flex-col items-center mt-20 space-y-12">
-      <div className="flex flex-col items-center space-y-12 lg:flex-row-reverse lg:px-10 overflow-hidden lg:justify-between">
+      <div className="flex flex-col items-center space-y-12 lg:flex-row lg:px-10 overflow-hidden lg:justify-between">
         <div className="relative image lg:-mr-70">
           <picture className="lg:-mr-70">
             <source
