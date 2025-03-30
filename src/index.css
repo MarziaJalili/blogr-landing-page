@@ -152,7 +152,7 @@ h1 span {
 .image:hover .waves {
   display: flex;
 }
-.waves span {
+.design .waves span {
   animation: animate-wave 5s linear infinite;
   animation-delay: calc(0.5s * var(--f));
 }
@@ -168,6 +168,26 @@ h1 span {
   100% {
     width: 150%;
     height: calc(150% + 75px);
+    opacity: 0;
+  }
+}
+
+.features .waves span {
+  animation: animate-wave-2 5s linear infinite;
+  animation-delay: calc(0.5s * var(--f));
+}
+
+@keyframes animate-wave-2 {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    height: calc(150% + 160px);
     opacity: 0;
   }
 }

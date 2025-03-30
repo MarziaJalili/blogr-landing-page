@@ -13,10 +13,10 @@ const Design = () => {
   });
 
   return (
-    <section className="design relative flex flex-col items-center mt-20 space-y-12">
+    <section className="features relative flex flex-col items-center mt-20 space-y-12">
       <div className="flex flex-col items-center space-y-12 lg:flex-row lg:px-10 overflow-hidden lg:justify-between">
-        <div className="relative image lg:-mr-70">
-          <picture className="lg:-mr-70">
+        <div className="relative image lg:-ml-80">
+          <picture className="lg:-ml-80">
             <source
               media="(min-width: 1024px)"
               srcset="illustration-laptop-desktop.svg"

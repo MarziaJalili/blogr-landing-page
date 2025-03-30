@@ -88,13 +88,16 @@ const Cta = () => {
             Sign Up
           </button>
         </div>
-        {isMenuShown ? <MobileMenu /> : null}
+        {isMenuShown ? <MobileMenu handleClick={handleClick} /> : null}
       </div>
 
       {/* heading content */}
       <div className="container mx-auto items-center flex flex-col px-8 pb-30 pt-10 space-y-3 text-White-text lg:my-4">
-        <h1 className="relative text-4xl font-medium text-center px-6 md:text-4xl lg:text-5xl">
+        <h1 className="relative max-md:hidden text-4xl font-medium text-center px-6 md:text-4xl lg:text-5xl">
           {headingSpans}
+        </h1>
+        <h1 className="text-4xl md:hidden font-medium text-center px-3 md:text-4xl lg:text-5xl">
+          A modern publishing platform
         </h1>
         <p className="text-center px-5 lg:text-lg">
           Grow your audience and build your online brand
