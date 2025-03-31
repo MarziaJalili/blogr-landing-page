@@ -35,7 +35,7 @@ const Nav = () => {
         </a>
         {isProductShown ? (
           <ul
-            className={`connect bg-White-text items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8  ${
+            className={`connect bg-White-text z-1 items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8  ${
               isCompanyShown ? "-left-14" : ""
             } p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]`}
           >
@@ -84,7 +84,7 @@ const Nav = () => {
           </button>
         </a>
         {isCompanyShown ? (
-          <ul className="connect bg-White-text items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]">
+          <ul className="connect bg-White-text z-1 items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]">
             <li className="hover:text-Very-dark-black-blue-footer-background transition-colors">
               About
             </li>
@@ -127,7 +127,7 @@ const Nav = () => {
           </button>
         </a>
         {isConnectShown ? (
-          <ul className="connect bg-White-text items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]">
+          <ul className="connect bg-White-text z-1 items-center text-Very-dark-grayish-blue-body-copy lg:absolute top-8 p-4 pr-6 flex flex-col space-y-2 rounded-lg lg:drop-shadow-xl max-lg:bg-gray-menu max-lg:w-[100%]">
             <li className="hover:text-Very-dark-black-blue-footer-background transition-colors">
               Contanct
             </li>
