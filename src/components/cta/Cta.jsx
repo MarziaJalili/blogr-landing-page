@@ -96,7 +96,7 @@ const Cta = () => {
         <h1 className="relative max-md:hidden text-4xl font-medium text-center px-6 md:text-4xl lg:text-5xl">
           {headingSpans}
         </h1>
-        <h1 className="text-4xl md:hidden font-medium text-center px-3 md:text-4xl lg:text-5xl">
+        <h1 className="text-4xl md:hidden font-medium text-center md:text-4xl lg:text-5xl">
           A modern publishing platform
         </h1>
         <p className="text-center px-5 lg:text-lg">
